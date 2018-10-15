@@ -1,6 +1,8 @@
+#-*- coding: utf-8 -*-
 """
 Definition of views.
 """
+
 
 from django.shortcuts import render
 from django.http import HttpRequest
@@ -57,9 +59,10 @@ def cadastro_cursos(request):
         context_instance = RequestContext(request,
         {
             'title':'Cadastro de cursos',
-#            'cursos': ['ADS' , 'SI', 'CC'],
+
             'cursos': Curso.objects.all(),
+
+           
             'year':datetime.now().year,
         })
     )
-
